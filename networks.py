@@ -120,7 +120,7 @@ class FeatureRegression(nn.Module):
             self.tanh.cuda()
 
     def forward(self, x):
-        print('x shape:' + x.shape + ' x.size(0):' + x.size(0))
+        print('x shape:' + str(x.shape) + ' x.size(0):' + str(x.size(0)))
         x = self.conv(x)
         x = x.view(x.size(0), -1)
         x = self.linear(x)
