@@ -122,6 +122,7 @@ class FeatureRegression(nn.Module):
     def forward(self, x):
         print(x.shape) #+ ' x.size(0):' + str(x.size(0)))
         x = self.conv(x)
+        x = x.contiguous()
         x = x.view(x.size(0), -1)
         x = self.linear(x)
         x = self.tanh(x)
